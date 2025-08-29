@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EcoWatt – Login</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: url("C:/Users/shaik/Downloads/WhatsApp Image 2025-08-28 at 21.38.03_83ab9857.jpg") no-repeat center center fixed;
+      background-size: cover;
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .login-container {
+      background: rgba(255, 255, 255, 0.9); /* semi-transparent white box */
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0px 4px 12px rgba(0,0,0,0.4);
+      width: 320px;
+      text-align: center;
+    }
+    h1 {
+      margin-bottom: 20px;
+      color: #064e3b;
+    }
+    label {
+      display: block;
+      margin-top: 10px;
+      font-weight: bold;
+      text-align: left;
+    }
+    input {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+    }
+    button {
+      width: 100%;
+      padding: 12px;
+      margin-top: 20px;
+      background: #22c55e;
+      border: none;
+      border-radius: 6px;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #15803d;
+    }
+    .error {
+      color: red;
+      margin-top: 10px;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="login-container">
+    <h1>🔑PiezoVolt Login</h1>
+    <form id="loginForm">
+      <label>Email</label>
+      <input type="email" id="email" placeholder="Enter your email" required>
+      
+      <label>Password</label>
+      <input type="password" id="password" placeholder="Enter your password" required>
+      
+      <button type="submit">Login</button>
+    </form>
+    <p class="error" id="errorMsg"></p>
+  </div>
+
+  <script>
+    document.getElementById("loginForm").addEventListener("submit", function(event){
+      event.preventDefault();
+
+      const email = document.getElementById("email").value;
+      const password = document.getElementById("password").value;
+
+      // Simple demo credentials
+      const demoEmail = "admin@ecowatt.com";
+      const demoPassword = "12345";
+
+      if(email === demoEmail && password === demoPassword){
+        window.location.href = "simulator.html"; // redirect to simulator page
+      } else {
+        document.getElementById("errorMsg").innerText = "Invalid email or password ❌";
+      }
+    });
+  </script>
+
+</body>
+</html>
+
